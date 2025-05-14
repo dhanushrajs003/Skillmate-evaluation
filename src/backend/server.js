@@ -3,7 +3,6 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const twilio = require("twilio");
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
@@ -19,7 +18,7 @@ if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN || !TWILIO_SERVICE_SID) {
 
 const client = twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 
-// Route to send OTP
+
 app.post("/send-otp", async (req, res) => {
   const { phone } = req.body;
   try {
